@@ -3,30 +3,7 @@
 This example program demonstrates the fundamental operations for managing on
 [Deployment][1] resources, such as `Create`, `List`, `Update` and `Delete`.
 
-You can adopt the source code from this example to write programs that manage
-other types of resources through the Kubernetes API.
-
-## Running this example
-
-Make sure you have a Kubernetes cluster and `kubectl` is configured:
-
-    kubectl get nodes
-
-Compile this example on your workstation:
-
 ```
-cd create-update-delete-deployment
-go build -o ./app
-```
-
-Now, run this application on your workstation with your local kubeconfig file:
-
-```
-./app
-# or specify a kubeconfig file with flag
-./app -kubeconfig=$HOME/.kube/config
-```
-
 Running this command will execute the following operations on your cluster:
 
 1. **Create Deployment:** This will create a 2 replica Deployment. Verify with
@@ -83,11 +60,4 @@ deployment with:
 
     kubectl delete deploy demo-deployment
 
-## Troubleshooting
 
-If you are getting the following error, make sure Kubernetes version of your
-cluster is v1.6 or above in `kubectl version`:
-
-    panic: the server could not find the requested resource
-
-[1]: https://kubernetes.io/docs/user-guide/deployments/
